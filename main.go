@@ -21,4 +21,5 @@ func main() {
 	fmt.Println("Starting Kafka-MQTT Client")
 	go mqttPublisher.Publish(client)
 	go kafkaConsumer.Consume()
+	select {}
 }

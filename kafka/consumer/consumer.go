@@ -26,7 +26,7 @@ func Consume() {
 		switch ev := e.(type) {
 		case *kafka.Message:
 			// application-specific processing
-			fmt.Printf("Consumed event from topic %s: key = %-10s value = %s\n",
+			fmt.Printf("Consumed kafka event from topic %s: key = %-10s value = %s\n",
 				*ev.TopicPartition.Topic, string(ev.Key), string(ev.Value))
 		case kafka.Error:
 			fmt.Fprintf(os.Stderr, "%% Error: %v\n", ev)
